@@ -1,8 +1,18 @@
+from django.http import HttpResponseNotAllowed, HttpResponse
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import ensure_csrf_cookie
 from rest_framework.viewsets import ModelViewSet
 
-from api.serializers import QuoteCreateSerializer, QuoteUpdateSerializer, QuoteSerializer
+from api.serializers import QuoteCreateSerializer, QuoteUpdateSerializer, QuoteSerializer, QuoteViewSerializer
 from webapp.models import Quote
 from .permissions import QuotePermissions
+
+
+# @ensure_csrf_cookie
+# def get_token_view(request, *args, **kwargs):
+#     if request.method == 'GET':
+#         return HttpResponse()
+#     return HttpResponseNotAllowed('Only GET request are allowed')
 
 
 class QuoteViewSet(ModelViewSet):

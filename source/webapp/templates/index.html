@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}Hello{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+    </div>
+    {# на главной показываем массовое удаление только модераторам и админу #}
+{% endblock %}
+
+{% block scripts %}
+    <script type="application/javascript" src="{% static "js/votes.js" %}"></script>
+{% endblock %}
