@@ -1,14 +1,22 @@
-from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseNotAllowed
+from django.shortcuts import render, render_to_response
 
 # Create your views here.
-from django.views.generic import ListView
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import ensure_csrf_cookie
+from django.views.generic import View
 
 from webapp.models import Quote
 
 
-class IndexView(ListView):
-    # form_class = Hei
-    template_name = 'index.html'
+@ensure_csrf_cookie
+def get_token_view(request, *args, **kwargs):
+    if request.method == 'GET':
+        return HttpResponse()
+    return HttpResponseNotAllowed('Only GET request are allowed')
 
-    def get_queryset(self):
-        return Quote.objects.all()
+
+class IndexView(View):
+    @method_decorator(ensure_csrf_cookie)
+    def get(self, request, *args, **kwargs):
+        return render_to_response('index.html')

@@ -8,11 +8,11 @@ from webapp.models import Quote
 from .permissions import QuotePermissions
 
 
-# @ensure_csrf_cookie
-# def get_token_view(request, *args, **kwargs):
-#     if request.method == 'GET':
-#         return HttpResponse()
-#     return HttpResponseNotAllowed('Only GET request are allowed')
+@ensure_csrf_cookie
+def get_token_view(request, *args, **kwargs):
+    if request.method == 'GET':
+        return HttpResponse()
+    return HttpResponseNotAllowed('Only GET request are allowed')
 
 
 class QuoteViewSet(ModelViewSet):
