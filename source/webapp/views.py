@@ -25,7 +25,11 @@ class IndexView(View):
 class QuoteVoteView(View):
     def post(self, request, *args, **kwargs):
         quote = get_object_or_404(Quote, pk=kwargs.get('pk'))
-        vote, created = Vote.objects.get_or_create(quote=quote, session_key=request.session.session_key)
+        if not request.session.session_key:
+            request.session.save()
+        session_key = request.session.session_key
+        print(session_key)
+        vote, created = Vote.objects.get_or_create(quote=quote, session_key=session_key)
         if created:
             vote.rating = 1
             vote.save()
