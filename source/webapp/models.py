@@ -23,6 +23,15 @@ class Quote(models.Model):
     def get_moderated(cls):
         return cls.objects.filter(status=STATUS_MODERATED)
 
+    def vote_rating(self):
+        rating = 0
+        for i in self.votes.all():
+            rating += i.rating
+        self.rating = rating
+        self.save()
+        return rating
+
+
     def __str__(self):
         return f'{self.text[:20]}'
 
@@ -36,7 +45,7 @@ class Vote(models.Model):
     session_key = models.CharField(max_length=40, verbose_name='Ключ сессии')
     quote = models.ForeignKey(Quote, related_name='votes', on_delete=models.CASCADE, 
                               verbose_name='Цитата')
-    rating = models.IntegerField(choices=((1, 'up'), (-1, 'down')), verbose_name='Рейтинг')
+    rating = models.IntegerField(choices=((1, 'up'), (-1, 'down')), verbose_name='Рейтинг' , null=True)
 
     def __str__(self):
         return f'{self.rating} {self.quote}'

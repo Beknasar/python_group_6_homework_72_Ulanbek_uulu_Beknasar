@@ -1,16 +1,38 @@
-from django.contrib.auth import get_user_model, login, update_session_auth_hash
+from django.contrib.auth import get_user_model, authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.views import PasswordChangeView, \
+    PasswordResetView, PasswordResetConfirmView
+from django.core.mail import send_mail
+from django.core.paginator import Paginator
 from django.http import HttpResponseRedirect, Http404
-from django.shortcuts import redirect
+from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from django.views.generic import View, FormView, DetailView, CreateView, UpdateView
 from django.conf import settings
 
 from accounts.forms import MyUserCreationForm, UserChangeForm, ProfileChangeForm, \
     PasswordChangeForm, PasswordResetEmailForm, PasswordResetForm
-
 from .models import AuthToken, Profile
+
+
+# def login_view(request):
+#     context = {}
+#     if request.method == 'POST':
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
+#         user = authenticate(request, username=username, password=password)
+#         if user is not None:
+#             login(request, user)
+#             return redirect('webapp:index')
+#         else:
+#             context['has_error'] = True
+#     return render(request, 'registration/login.html', context=context)
+#
+#
+# def logout_view(request):
+#     logout(request)
+#     return redirect('webapp:index')
 
 
 class RegisterView(CreateView):
@@ -60,15 +82,15 @@ class UserDetailView(LoginRequiredMixin, DetailView):
     paginate_related_orphans = 0
 
     def get_context_data(self, **kwargs):
-        # articles = self.object.articles.order_by('-created_at')
-        # paginator = Paginator(articles, self.paginate_related_by, orphans=self.paginate_related_orphans)
-        # page_number = self.request.GET.get('page', 1)
-        # page = paginator.get_page(page_number)
-        # kwargs['page_obj'] = page
-        # kwargs['articles'] = page.object_list
-        # kwargs['is_paginated'] = page.has_other_pages()
-        # if self.object == self.request.user:   # на странице пользователя показываем
-        #     kwargs['show_mass_delete'] = True  # массовое удаление только владельцу
+        articles = self.object.articles.order_by('-created_at')
+        paginator = Paginator(articles, self.paginate_related_by, orphans=self.paginate_related_orphans)
+        page_number = self.request.GET.get('page', 1)
+        page = paginator.get_page(page_number)
+        kwargs['page_obj'] = page
+        kwargs['articles'] = page.object_list
+        kwargs['is_paginated'] = page.has_other_pages()
+        if self.object == self.request.user:   # на странице пользователя показываем
+            kwargs['show_mass_delete'] = True  # массовое удаление только владельцу
         return super().get_context_data(**kwargs)
 
 
