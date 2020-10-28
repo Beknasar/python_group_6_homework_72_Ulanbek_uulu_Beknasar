@@ -28,7 +28,6 @@ class QuoteVoteView(View):
         if not request.session.session_key:
             request.session.save()
         session_key = request.session.session_key
-        print(session_key)
         vote, created = Vote.objects.get_or_create(quote=quote, session_key=session_key)
         if created:
             vote.rating = 1

@@ -1,0 +1,131 @@
+[
+{
+  "model": "webapp.quote",
+  "pk": 17,
+  "fields": {
+    "text": "\u041d\u0435 \u0441\u043e\u0432\u0435\u0440\u0448\u0430\u0439 \u043a\u043b\u0430\u0441\u0441\u0438\u0447\u0435\u0441\u043a\u0443\u044e \u043e\u0448\u0438\u0431\u043a\u0443 \u0432\u0441\u0435\u0445 \u0443\u043c\u043d\u0438\u043a\u043e\u0432: \u043d\u0435 \u0434\u0443\u043c\u0430\u0439, \u0447\u0442\u043e \u043d\u0435\u0442 \u043b\u044e\u0434\u0435\u0439 \u0443\u043c\u043d\u0435\u0435 \u0442\u0435\u0431\u044f.",
+    "author": "\u041a\u0430\u0440\u043b \u0412\u0430\u043d \u041b\u0443\u043d",
+    "email": "karl@mail.com",
+    "rating": 0,
+    "status": "moderated",
+    "created_at": "2020-10-27T08:02:04.984Z"
+  }
+},
+{
+  "model": "webapp.quote",
+  "pk": 18,
+  "fields": {
+    "text": "\u0414\u0435\u043d\u0435\u0433, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u044f \u0437\u0430\u0440\u0430\u0431\u043e\u0442\u0430\u043b, \u0445\u0432\u0430\u0442\u0438\u0442 \u043c\u043d\u0435 \u0434\u043e \u043a\u043e\u043d\u0446\u0430 \u0436\u0438\u0437\u043d\u0438, \u0435\u0441\u043b\u0438 \u044f \u0443\u043c\u0440\u0443 \u0441\u0435\u0433\u043e\u0434\u043d\u044f \u0432 16.00.",
+    "author": "\u0425\u0435\u043d\u043d\u0438 \u042f\u043d\u0433\u043c\u0430\u043d",
+    "email": "Henny@mail.com",
+    "rating": -1,
+    "status": "new",
+    "created_at": "2020-10-27T08:09:01.762Z"
+  }
+},
+{
+  "model": "webapp.quote",
+  "pk": 19,
+  "fields": {
+    "text": "\u041d\u0438\u0447\u0442\u043e \u0442\u0430\u043a \u043d\u0435 \u0432\u044b\u0434\u0430\u0435\u0442 \u0447\u0435\u043b\u043e\u0432\u0435\u043a\u0430, \u043a\u0430\u043a \u0442\u043e, \u043d\u0430\u0434 \u0447\u0435\u043c \u043e\u043d \u0441\u043c\u0435\u0451\u0442\u0441\u044f.",
+    "author": "\u0418\u043e\u0433\u0430\u043d\u043d \u0412\u043e\u043b\u044c\u0444\u0433\u0430\u043d\u0433 \u0444\u043e\u043d \u0413\u0451\u0442\u0435",
+    "email": "ivfg@gmail.com",
+    "rating": 3,
+    "status": "moderated",
+    "created_at": "2020-10-27T08:09:45.683Z"
+  }
+},
+{
+  "model": "webapp.quote",
+  "pk": 20,
+  "fields": {
+    "text": "\u0422\u0435\u043e\u0440\u0438\u044f \u2014 \u044d\u0442\u043e \u043a\u043e\u0433\u0434\u0430 \u0432\u0441\u0435 \u0438\u0437\u0432\u0435\u0441\u0442\u043d\u043e, \u043d\u043e \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442. \u041f\u0440\u0430\u043a\u0442\u0438\u043a\u0430 \u2014 \u044d\u0442\u043e \u043a\u043e\u0433\u0434\u0430 \u0432\u0441\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442, \u043d\u043e \u043d\u0438\u043a\u0442\u043e \u043d\u0435 \u0437\u043d\u0430\u0435\u0442 \u043f\u043e\u0447\u0435\u043c\u0443. \u041c\u044b \u0436\u0435 \u043e\u0431\u044a\u0435\u0434\u0438\u043d\u044f\u0435\u043c \u0442\u0435\u043e\u0440\u0438\u044e \u0438 \u043f\u0440\u0430\u043a\u0442\u0438\u043a\u0443: \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442... \u0438 \u043d\u0438\u043a\u0442\u043e \u043d\u0435 \u0437\u043d\u0430\u0435\u0442 \u043f\u043e\u0447\u0435\u043c\u0443!",
+    "author": "\u0410\u043b\u044c\u0431\u0435\u0440\u0442 \u042d\u0439\u043d\u0448\u0442\u0435\u0439\u043d",
+    "email": "einstein@mail.com",
+    "rating": 1,
+    "status": "new",
+    "created_at": "2020-10-27T13:08:29.632Z"
+  }
+},
+{
+  "model": "webapp.vote",
+  "pk": 6,
+  "fields": {
+    "session_key": "dyuzu5yka1c184wloursn7562w9dihh8",
+    "quote": 19,
+    "rating": 1
+  }
+},
+{
+  "model": "webapp.vote",
+  "pk": 7,
+  "fields": {
+    "session_key": "dyuzu5yka1c184wloursn7562w9dihh8",
+    "quote": 18,
+    "rating": -1
+  }
+},
+{
+  "model": "webapp.vote",
+  "pk": 8,
+  "fields": {
+    "session_key": "dyuzu5yka1c184wloursn7562w9dihh8",
+    "quote": 17,
+    "rating": 1
+  }
+},
+{
+  "model": "webapp.vote",
+  "pk": 9,
+  "fields": {
+    "session_key": "dyuzu5yka1c184wloursn7562w9dihh8",
+    "quote": 20,
+    "rating": 1
+  }
+},
+{
+  "model": "webapp.vote",
+  "pk": 10,
+  "fields": {
+    "session_key": "3onxfdalb8us1d9rlqbopgvf3a8zfsee",
+    "quote": 19,
+    "rating": 1
+  }
+},
+{
+  "model": "webapp.vote",
+  "pk": 11,
+  "fields": {
+    "session_key": "3onxfdalb8us1d9rlqbopgvf3a8zfsee",
+    "quote": 17,
+    "rating": -1
+  }
+},
+{
+  "model": "webapp.vote",
+  "pk": 12,
+  "fields": {
+    "session_key": "l8zocltt2tq96f4yqqvm7qxvq6xi0l8k",
+    "quote": 19,
+    "rating": 1
+  }
+},
+{
+  "model": "webapp.vote",
+  "pk": 13,
+  "fields": {
+    "session_key": "l8zocltt2tq96f4yqqvm7qxvq6xi0l8k",
+    "quote": 17,
+    "rating": 1
+  }
+},
+{
+  "model": "webapp.vote",
+  "pk": 14,
+  "fields": {
+    "session_key": "509trelbz5fp93d75t7gruipx4usnttx",
+    "quote": 17,
+    "rating": -1
+  }
+}
+]
