@@ -25,36 +25,16 @@
             <li class="nav-item">
               <a href="" id="add_cits" class="nav-link">Добавить цитату</a>
             </li>
-        {% if request.user.is_authenticated %}
-{#            <li><a href="{% url "webapp:product_create" %}">Add Product</a></li>#}
-            {% block menu %}{% endblock %}
-{#            <li class="nav-item">#}
-{#                <a class="nav-link" href="{% url 'accounts:detail' request.user.pk %}">#}
-{#                    Привет, {{ request.user.get_full_name|default:request.user.username }}#}
-{#                </a>#}
-{#            </li>#}
-        {% endif %}
-            {% block auth_menu %}
-                {% if request.user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'accounts:logout' %}?next={{ request.get_full_path }}">Logout</a>
-                    </li>
-                {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'accounts:login' %}?next={{ request.get_full_path }}">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'accounts:create' %}?next={{ request.get_full_path }}">Sign Up</a>
-                    </li>
-                {% endif %}
-            {% endblock %}
-{#            <li class="nav-item">#}
-{#                <a class="nav-link" href="{% url 'accounts:login' %}?next={{ request.get_full_path }}">Login</a>#}
-{#            </li>#}
-{#            <li class="nav-item">#}
-{#                <a class="nav-link" href="{% url 'accounts:logout' %}?next={{ request.get_full_path }}">Logout</a>#}
-{#            </li>#}
-{#            #}
+            {% if user.is_authenticated %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
+                </li>
+            {% else %}
+                    <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
+                </li>
+            {% endif %}
+        {% block menu %}{% endblock %}
         </ul>
       </div>
     </nav>
@@ -66,6 +46,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+
     <script src="{% static "js/api_client.js" %}"></script>
     {% block scripts %}{% endblock %}
 </body>
